@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Virtual Machines House</title>
+</head>
+<body>
+
+<h1>Virtual Machines House app</h1>
+<p>Virtual Machines House app is designed to run on Apple Silicon based Mac computers.</p>
+
+<p>
+Virtual Machines House app can be used to create and view arm64 based virual Mac and Linux systems.
+</p>
+
+<h2>Linux virtual machines</h2>
+<p>To create a virtual Linux system, an arm64 based ISO image file that supports virtiofs is required.<br>
+For example to create Alpine Linux virtual machine, download aarch64 iso file under VIRTUAL section at https://alpinelinux.org/downloads/ and use it in the app.
+</p>
+
+<h2>Shared directories on Mac virtual machines</h2>
+<p>
+    Shared directories in macOS VMs are only available in macOS 13 and later.<br>
+The shared directories are automatically mounted at /Volumes/My Shared Files/. They can be seen in the Finder.
+</p>
+
+<h2>
+Shared directories on Linux virtual machines with virtio file system</h2>
+<p>
+To mount a shared directory of the host machine onto a directory of the guest machine, execute the following command on a terminal in the virtual machine.<br>
+mount -t virtiofs shared-folders directory<br>
+For example, to mount the shared directories of the host machine on to the /tmp folder of the guest virtual machine, execute:<br>
+mount -t virtiofs shared-folders /tmp<br>
+</p>
+
+<h2>Terminology</h2>
+<h3>Mac computers</h3>
+<p>
+    A computer made by Apple that has an operating system called macOS. Example: MacBook Pro, MacBook Air, Macmini, Mac Studio, and iMac.<br>
+</p>
+
+<h3>Host machine</h3>
+<p>A Mac machine that runs Virtual Machines House app.</p>
+
+<h3>Virtual machine</h3>
+<p>
+A guest macOS or Linux based systems running with the Virtual Machines House app.
+</p>
+
+<h2>Support</h2>
+  Please view or create a new discussion at <a href="https://github.com/kumbaraasi/virtual-machines-house/discussions">this page</a>.
+</body>
+</html>
