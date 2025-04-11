@@ -32,6 +32,32 @@ For example, to mount the shared directories of the host machine on to the /tmp 
 mount -t virtiofs shared-folders /tmp<br>
 </p>
 
+  <h2>macOS Restore Image URI of IPSW files</h2>
+<p>
+Mac images links table has 3 sets of the URIs of IPSW files:
+<ol>
+    <li>Hardcoded set</li>
+    <li>Populated set</li>
+    <li>User-Given set</li>
+</ol>
+</p>
+
+<h3>Hardcoded set</h3>
+<p>
+This set contains the URIs that are built-in with the app. Those are URIs of:
+<ol>
+    <li>macOS Monterey 12.6.1</li>
+    <li>macOS Ventura 13.6</li>
+    <li>Sonoma 14.6.1</li>
+</ol>
+</p>
+
+<h3>Populated set</h3>
+<p>App periodically checks for the latest macOS version. The resulting URI is saved in this set.</p>
+
+<h3>User-Given set</h3>
+<p>User provided URIs are in this set.</p>
+
 <h2>Terminology</h2>
 <h3>Mac computers</h3>
 <p>
