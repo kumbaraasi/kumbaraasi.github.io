@@ -8,8 +8,13 @@
 <h1>Virtual Machines House app</h1>
 <p>Virtual Machines House app is a light weight app designed to create and manage Mac and Linux virtual machines on mac computers.</p>
 
+  <h2>Mac virtual machines</h2>
+<p>
+  At present, mac virtual machines can be created only on the Apple Silicon based mac computers. Only macOS Monterey and above versions based virtual machines can be created.
+</p>
+  
 <h2>Linux virtual machines</h2>
-<p>To create a virtual Linux system on Apple Silicon(ARM64 processor or M1/M2/M3/M4 chip), an arm64 based ISO image file that supports virtiofs is required.<br>
+<p>To create a virtual Linux system on Apple Silicon, an arm64 based ISO image file that supports virtiofs is required.<br>
 For example to create Alpine Linux virtual machine, download aarch64 iso file under VIRTUAL section at https://alpinelinux.org/downloads/ and use it in the app.
 </p>
 <p>To create a virtual Linux system on Intel (x86_64) processor based systems, a x86_64 based ISO image file that supports virtiofs is required.<br>
@@ -58,6 +63,10 @@ This set contains the URIs that are built-in with the app. Those are URIs of:
 <p>User provided URIs are in this set.</p>
 
 <h2>Terminology</h2>
+  <h3>Apple Silicon</h3>
+  <p>
+    Mac computers with ARM64 processor or M1/M2/M3/M4 chip. You can find this in "About this Mac" window. To open "About This Mac" click the Apple menu () in the top-left corner of your screen and select About This Mac. 
+  </p>
 <h3>Mac computers</h3>
 <p>
     A computer made by Apple that has an operating system called macOS. Example: MacBook Pro, MacBook Air, Macmini, Mac Studio, and iMac.<br>
@@ -71,6 +80,10 @@ This set contains the URIs that are built-in with the app. Those are URIs of:
 A guest macOS or Linux based systems running with the Virtual Machines House app.
 </p>
 
+  <h2>Known limitations</h2>
+  <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
+  </p>
+  
 <h2>Known issues</h2>
 <h3>Linux virtual machine restore issue</h3>
   <p>
