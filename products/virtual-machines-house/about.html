@@ -6,105 +6,128 @@
 <body>
 
 <h1>Virtual Machines House app</h1>
-<p>Virtual Machines House app is a light weight app designed to create and manage Mac and Linux virtual machines on mac computers.</p>
+  <p>Virtual Machines House app is a light weight app designed to create and manage Mac and Linux virtual machines on mac computers.</p>
 
   <h2>Mac virtual machines</h2>
-<p>
+  <p>
   At present, mac virtual machines can be created only on the Apple Silicon based mac computers. Only macOS Monterey and above versions based virtual machines can be created.
-</p>
+  </p>
   
-<h2>Linux virtual machines</h2>
-<p>To create a virtual Linux system on Apple Silicon, an arm64 based ISO image file that supports virtiofs is required.<br>
+  <h2>Linux virtual machines</h2>
+  <p>To create a virtual Linux system on Apple Silicon, an arm64 based ISO image file that supports virtiofs is required.<br>
 For example to create Alpine Linux virtual machine, download aarch64 iso file under VIRTUAL section at https://alpinelinux.org/downloads/ and use it in the app.
-</p>
-<p>To create a virtual Linux system on Intel (x86_64) processor based systems, a x86_64 based ISO image file that supports virtiofs is required.<br>
+  </p>
+
+  <p>To create a virtual Linux system on Intel (x86_64) processor based systems, a x86_64 based ISO image file that supports virtiofs is required.<br>
 For example to create Alpine Linux virtual machine, download x86_64 iso file under VIRTUAL section at https://alpinelinux.org/downloads/ and use it in the app.
-</p>
+  </p>
 
-<h2>Shared directories on Mac virtual machines</h2>
-<p>
+  <h2>Shared directories on Mac virtual machines</h2>
+  <p>
     Shared directories in macOS VMs are only available in macOS 13 and later.<br>
-The shared directories are automatically mounted at /Volumes/My Shared Files/. They can be seen in the Finder.
-</p>
+    The shared directories are automatically mounted at /Volumes/My Shared Files/. They can be seen in the Finder.
+  </p>
 
-<h2>
-Shared directories on Linux virtual machines with virtio file system</h2>
-<p>
-To mount a shared directory of the host machine onto a directory of the guest machine, execute the following command on a terminal in the virtual machine.<br>
+  <h2>Shared directories on Linux virtual machines with virtio file system</h2>
+  <p>
+    To mount a shared directory of the host machine onto a directory of the guest machine, execute the following command on a terminal in the virtual machine.<br>
 mount -t virtiofs shared-folders directory<br>
 For example, to mount the shared directories of the host machine on to the /tmp folder of the guest virtual machine, execute:<br>
 mount -t virtiofs shared-folders /tmp<br>
-</p>
+  </p>
 
   <h2>macOS Restore Image URI of IPSW files</h2>
-<p>
-Mac images links table has 3 sets of the URIs of IPSW files:
-<ol>
+  <p>
+    Mac images links table has 3 sets of the URIs of IPSW files:
+  <ol>
     <li>Hardcoded set</li>
     <li>Populated set</li>
     <li>User-Given set</li>
-</ol>
+  </ol>
 </p>
 
-<h3>Hardcoded set</h3>
-<p>
-This set contains the URIs that are built-in with the app. Those are URIs of:
-<ol>
+  <h3>Hardcoded set</h3>
+  <p>
+    This set contains the URIs that are built-in with the app. Those are URIs of:
+  <ol>
     <li>macOS Monterey 12.6.1</li>
     <li>macOS Ventura 13.6</li>
     <li>Sonoma 14.6.1</li>
-</ol>
+    <li>Sequoia 15.6.1</li>
+  </ol>
 </p>
 
-<h3>Populated set</h3>
-<p>App periodically checks for the latest macOS version. The resulting URI is saved in this set.</p>
+  <h3>Populated set</h3>
+  <p>App periodically checks for the latest macOS version. The resulting URI is saved in this set.</p>
 
-<h3>User-Given set</h3>
-<p>User provided URIs are in this set.</p>
+  <h3>User-Given set</h3>
+  <p>User provided URIs are in this set.</p>
 
-<h2>Terminology</h2>
+  <h2>Terminology</h2>
   <h3>Apple Silicon</h3>
   <p>
     Mac computers with ARM64 processor or M1/M2/M3/M4 chip. You can find this in "About this Mac" window. To open "About This Mac" click the Apple menu () in the top-left corner of your screen and select About This Mac. 
   </p>
-<h3>Mac computers</h3>
-<p>
+  <h3>Mac computers</h3>
+  <p>
     A computer made by Apple that has an operating system called macOS. Example: MacBook Pro, MacBook Air, Macmini, Mac Studio, and iMac.<br>
-</p>
+  </p>
 
-<h3>Host machine</h3>
-<p>A Mac machine that runs Virtual Machines House app.</p>
+  <h3>Host machine</h3>
+  <p>A Mac machine that runs Virtual Machines House app.</p>
 
-<h3>Virtual machine</h3>
-<p>
-A guest macOS or Linux based systems running with the Virtual Machines House app.
-</p>
+  <h3>Virtual machine</h3>
+  <p>
+    A guest macOS or Linux based systems running with the Virtual Machines House app.
+  </p>
+
+  <h3>ASIF - Apple Sparse Image Format</h3>
+  <p>
+    A modern sparse read/write image, introduced by Apple on macOS Tahoe. The space it uses on your disk is proportional to the data it contains, making it efficient and general-purpose.
+  </p>
+  <p>
+    Observation: It starts with just 4 MB and expands as and when needed.
+  </p>
 
   <h2>Known limitations</h2>
   <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
   </p>
+  <p>On mac computers with Intel processor, the app cannot save and restore the state of the virtual machines.</p>
   
-<h2>Known issues</h2>
-<h3>Linux virtual machine restore issue</h3>
-  <p>
-  If a linux virtual machine is running when the app is quitting, the state of the virtual machine is stored but it becomes not usuable when the app is launched again. The state has to removed with the Remove State button manually. This is a workaround. This will be solved in the next update.
-  </p>
-<h3>macOS Tahoe support on macOS Sequoia</h2>
-<p>
-  Beta 2 and above needed this <a href="https://developer.apple.com/services-account/download?path=/Developer_Tools/Device_Support_for_macOS_15_beta/MobileDevice_DeviceSupport.dmg">Device Support Image</a> to be installed beforehand. Otherwise, the following error will be observed.
-</p>
-<p>Installing restore image failed. Error: A software update is required to complete the installation. Installation requires a software update.
-</p>
+  <h2>Known issues</h2>
 
-<h2>Closed issues with version 1.2</h2>
-<h3>CPU count</h2>
-<p>
-Virtual Machines House app version 1.2 computes CPU count to half the size of the system's and uses the max of that with value 4. This solves the issue seen in version 1.1. Sample steps are captured at <a href="https://kumbaraasi.github.io/products/virtual-machines-house/creating-macos-tahoe-preview-vm.pdf">this page</a>.
-</p>
-<p>
-Virtual Machines House app version 1.1 by default uses CPU count value 20. This causes some troubles. Edit the slide and set to 4. Troubleshooting with CPU value 20 is captured at <a href="https://kumbaraasi.github.io/products/virtual-machines-house/troubleshooting-macos-tahoe-installation-with-cpu-value-20.pdf">this page</a>.
-</p>
-<h2>Support</h2>
+  <h3>macOS Tahoe support on macOS Sequoia</h2>
+  <p>
+  This <a href="https://developer.apple.com/services-account/download?path=/Developer_Tools/Device_Support_for_macOS_15_beta/MobileDevice_DeviceSupport.dmg">Device Support Image</a> has to be installed beforehand. Otherwise, the following error will be observed:
+  </p>
+  <p>Installing restore image failed. Error: A software update is required to complete the installation. Installation requires a software update.
+  </p>
+
+  <h2>Closed issues with version 1.3</h2>
+  <h3>Linux virtual machine restore issue</h3>
+  <p>
+  On Apple Silion, if a linux virtual machine is running when the app is quitting, the state of the virtual machine is stored but it becomes not usuable when the app is launched again. The state has to removed with the Remove State button manually. This is a workaround. This will be solved in the next update.
+  </p>
+
+  <h2>Closed issues with version 1.2</h2>
+  <h3>CPU count</h2>
+  <p>
+    Virtual Machines House app version 1.2 computes CPU count to half the size of the system's and uses the max of that with value 4. This solves the issue seen in version 1.1. Sample steps are captured at <a href="https://kumbaraasi.github.io/products/virtual-machines-house/creating-macos-tahoe-preview-vm.pdf">this page</a>.
+  </p>
+  <p>
+  Virtual Machines House app version 1.1 by default used CPU count value 20. This caused some troubles. Edit the slide and set to 4. Troubleshooting with CPU value 20 is captured at <a href="https://kumbaraasi.github.io/products/virtual-machines-house/troubleshooting-macos-tahoe-installation-with-cpu-value-20.pdf">this page</a>.
+  </p>
+
+  <h2>Thanks!!</h2>
+  <p>
+    Thanks to all users of this app.<br>
+    Thanks to GitHub for hosting this page.<br>
+    Thanks to Apple for providing the resources to the developer community.<br>
+    Thanks to the developer and opensource community across various forums such as StackOverflow, Apple Developer forun, Quora, Reddit, StackExchange, Alpine, Ubuntu, Fedora, etc.<br>
+    Thanks to Manu, Meenu, RamSubbu, Sriki, friends and family.<br>
+  </p>
+  
+  <h2>Support</h2>
   Please view or create a new discussion at <a href="https://github.com/kumbaraasi/virtual-machines-house/discussions">this page</a>.
 </body>
 </html>
