@@ -93,6 +93,53 @@ mount -t virtiofs shared-folders /tmp<br>
   <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
   </p>
   <p>On mac computers with Intel processor, the app cannot save and restore the state of the virtual machines.</p>
+
+  <h2>Changes in 1.3</h2>
+  <p>
+    Has following key changes:
+  <ol>
+    <li>Introduced ASIF</li>
+    <li>Introduced Screenshot button</li>
+    <li>Introduced Screenshot Menu</li>
+    <li>Minimum OS - This was set to macOS 15.6 from 15.2.</li>
+    <li>Removed Latest Mac Image info fetch timer</li>
+    <li>Improved Remove State button</li>
+    <li>Minor focus and animation improvements</li>
+  </ol>
+</p>
+  <h3>ASIF</h3>
+  <p>
+    Disk images are created with ASIF format by default. Please note that this will allow creation of several virtual machines as the immediate size of the disk created is just 4 MB. 
+    So, if the warning about the disk size for a new virtual machine is not shown, it does not mean that there is sufficient space left. 
+    The disk of the existing virtual machines can grow per use anytime.
+  </p>
+  <h3>Screenshot Menu</h3>
+  <p>
+    A menu item is added to open app's screenshots folder in Finder. This will show up the app's container folders. 
+    Please take care not to disturb the containers folders and files.
+  </p>
+  <h3>Screenshot Button</h3>
+  <p>
+     It is on virtual machine windows to take screenshot of the respective window. It will be visible only when the virtual machine is on.
+  </p>
+  <h3>Latest Mac Image info fetch timer</h3>
+  <p>
+    Applicable only for Apple Silicon based mac systems.
+    In previous versions it was fired once at a launch time and later regularly at a random interval between a few hours and a day. 
+    This created a clutter of image informations for some people who never needed. 
+    (Thinking to re-introduce the same timer disabled by default with a setting to enable for those who need it in a future version).
+  </p>
+  <h3>Improvements on Remove state button</h3>
+  <p>
+    This button was previously shown only on error. Now, it is shown whenever the saved state is detected.
+    Also, The button's icon was previously Trash. It could confuse with the Remove virtual machine button. 
+    Therefore, it is now with a new icon - back arrow with cross mark, indicating the removal of state saved sometime back.
+    Also, added a confirmation dialog before removing the state when the user clicks on the button.
+    Also, added the button to the toolbar of the vm window.
+  </p>
+  <h3>Focus improvements</h3>
+  <p>In the create VM window, focus was not on the name field when the field appeared. In this version, this is fixed.
+  </p>
   
   <h2>Known issues</h2>
 
@@ -106,9 +153,18 @@ mount -t virtiofs shared-folders /tmp<br>
   <h2>Closed issues with version 1.3</h2>
   <h3>Linux virtual machine restore issue</h3>
   <p>
-  On Apple Silion, if a linux virtual machine is running when the app is quitting, the state of the virtual machine is stored but it becomes not usuable when the app is launched again. The state has to removed with the Remove State button manually. This is a workaround. This will be solved in the next update.
+  On Apple Silion, if a linux virtual machine is running when the app is quitting, 
+    the state of the virtual machine is stored but it becomes not usuable when the app is launched again. 
+    The state has to removed with the Remove State button or by other means manually. This is the workaround. 
+    This issue is fixed in 1.3.
   </p>
-
+  <h3>Running state when restoring</h3>
+  <p>
+    On Apple Silicon, when restoring the virtual machine from saved state, the virtual machine goes to Paused state. 
+    User has to click on Resume to run the virtual machine. In 1.3, auto-resume is done. So, one step is reduced. 
+    Further, on resuming, just a "Running" state was shown in 1.2. This is fixed in 1.3. Virtual machine console window is shown now.
+  </p>
+  
   <h2>Closed issues with version 1.2</h2>
   <h3>CPU count</h2>
   <p>
