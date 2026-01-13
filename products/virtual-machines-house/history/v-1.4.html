@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>What is new in Virtual Machines House app version 1.4</title>
+</head>
+<body>
+
+<h1>What is new in 1.4?</h1>
+<span style="white-space: pre;">
+In short,
+Disks can be now added/removed/excluded to the virtual machines.
+Virtual Machine window is now full screen without toolbar. Relevant toolbar actions are available in the menus.
+Previously, Keyboard shortcut to start a virtual machine was Space. With this version, it is Option+Space.
+
+Improvements at VM creation window:
+Improvements in Mac VM creation process:
+Saved Image URI
+Now shows options to see dowloaded images only.
+Additionally, shows the downloaded time.
+
+Improvements in Linux VM creation process:
+Now, shows option to use previously given iso files.
+Option to remove the default disk is given. This helps to test live ISO Linux distributions without having to install them to a disk.
+
+Improvements in overall VM creation process:
+Default focus is given to name field.
+Removed animations that lingered on the text fields.
+
+Improvements in the main window
+Added more VM control commands to the context menu of the selected virtual machine.
+
+Improvements in VM Inspector:
+Virtual Machine parameters are now editable only when the virtual machine is off.
+Default focus is applied to each of the parameters when they are in the editing view.
+Previously Edit button is shown only when a field is hovered on. Now, Edit button is visible by default for all editable parameters except Disks. 
+For Disks, now options are available to:
+Add a disk.
+Remove a disk.
+Include/Exclude a disk for attachment.
+Include/Exclude a disk for checking OS installation.
+
+Improvements on the Virtual Machine window:
+Fixed date sorting.
+Respective VM Inspector is now available on the respective VM window.
+Each virtual machine now gets a new menu on its name.
+All operations that are available in the toolbar of a virtual machine window are now available in the new menu.
+
+Improvements on the Menu:
+File Menu:
+A new “New virtual machine” command menu is introduced replacing the system provided one.
+On Main window:
+A new “Duplicate <vm name>” command menu is introduced to clone the selected virtual machine when the virtual machine is off.
+On VM window:
+A new “Duplicate <vm name>” command menu is introduced to clone the opened virtual machine window when the virtual machine is off..
+
+View Menu:
+Inspector, Sidebar and Toolbar commands are now available on the View menu.
+Using these menus, Inspector/Sidebar/Toolbar can be shown/hidden on the applicable windows.
+Known issue: Keyboard short “option command T” does not work to show/hide toolbar.
+
+Respective VM Menu:
+On Main window:
+Commands for a VM are shown for the selected virtual machine.
+On VM windows:
+Commands for the respective VM are shown.
+For example, if the name of a virtual machine is “Alp”, the menu name is Alp.
+
+Changes to Settings window:
+Settings window is removed in this version. It will be made available in a future version.
+Previously, Mac image links table is displayed in the Settings window. Now, these links are displayed in a new Downloads window. This window can be opened from Windows menu.
+
+Downloads window:
+Restricted removal of mac image URI and file if they are in use at any virtual machine.
+An inspector is introduced to show associated virtual machines of a selected link.
+Such associated virtual machines can be opened from the inspector by double clicking on its name.
+
+Improvements on the Bookmarks window:
+Associated virtual machines can be opened from the inspector by double clicking on its name.
+Fixed date sorting.
+
+Backward compatibility:
+The datastructure of the virtual machine configuration is modified to accommodate multiple disks. Virtual Machine created with the previous app version can be opened by this version. But backward compatibility is not available.
+
+Tips:
+Removed Tip showing ASIF support.
+
+Miscellaneous:
+Removed a few preview asset leaks.
+Improved handling of First responder of keyboard shortcut for Start and Resume commands for VM. 
+</apan>
+</body>
+</html>
