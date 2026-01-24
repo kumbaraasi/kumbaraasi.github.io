@@ -58,7 +58,7 @@ mount -t virtiofs shared-folders /tmp<br>
 </p>
 
   <h3>Populated set</h3>
-  <p>App periodically checks for the latest macOS version. The resulting URI is saved in this set.</p>
+  <p>When a user checks for the latest macOS version, the resulting URI is saved in this set. Similarly, when a user checks for a macOS developer beta, the resulting URI is saved in this set.</p>
 
   <h3>User-Given set</h3>
   <p>User provided URIs are in this set.</p>
@@ -94,12 +94,17 @@ mount -t virtiofs shared-folders /tmp<br>
     Observation: It starts with just 4 MB and expands as and when needed.
   </p>
 
-  <h2>Known limitations</h2>
-  <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
+  <h3>Bookmarks</h3>
+  <p>
+    Following are bookmarked:
+    <ul>
+    <li>Folders given to mount on the virtual machines.</li>
+    <li>macOS restore images (IPSW files) given to create a macOS virtual machine.</li>
+    <li>Linux images (ISO files) given to create a Linux virtual machine.</li>
+    </ul>
+    Bookmarks can be viewed and managed at Bookmarks window. Click on the Window menu and click on Bookmarks submenu to open the Bookmarks window.
   </p>
-  <p>On mac computers with Intel processor, the app cannot save and restore the state of the virtual machines.</p>
-  <p>The app cannot be used on a virtual machine.</p>
-
+  
   <h3>Screenshot Menu</h3>
   <p>
     A menu item opens app's screenshots folder in Finder. This will show up the app's container folders.
@@ -114,6 +119,13 @@ mount -t virtiofs shared-folders /tmp<br>
     On macOS Sequoia, Latest images URI points to just latest version of Sequoia and it does not point to macOS Tahoe.
   </p>
   
+  <h2>Known limitations</h2>
+  <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
+  </p>
+  <p>On mac computers with Intel processor, the app cannot save and restore the state of the virtual machines.</p>
+  <p>The app cannot be used on a virtual machine.</p>
+
+  
   <h2>Known issues</h2>
   
   <h3>macOS Tahoe support on macOS Sequoia</h2>
@@ -122,8 +134,13 @@ mount -t virtiofs shared-folders /tmp<br>
       </p>
       <p>Installing restore image failed. Error: A software update is required to complete the installation. Installation requires a software update.
       </p>
+
+   <h3>Version 1.4.0 and later</h3>
+       <p>Force Stop button may show dialog twice.<p>
       
-      
+   <h3>User Interface</h3>
+       <p>Keyboard navigation, accessibility, help, table, uniform controls, etc, need some improvements.</p>
+       
       <h2>Thanks!!</h2>
       <p>
       Thanks to all users of this app.<br>
@@ -138,5 +155,15 @@ mount -t virtiofs shared-folders /tmp<br>
       <h2>Videos</h2>
       A few videos showing how to use the app:
       <a href="https://www.youtube.com/@VirtualMachinesHouse">Youtube</a>
+      
+      <h2>Change history</h2>
+      <p>
+      <a href="https://kumbaraasi.github.io/products/virtual-machines-house/history/v-1.4.html">
+      Version 1.4.0 - Release notes</a>
+      </p>
+      <p>
+      <a href="https://kumbaraasi.github.io/products/virtual-machines-house/history/v-1.3.html">
+      Version 1.3.0 - Release notes</a>
+      </p>
 </body>
 </html>
