@@ -120,27 +120,51 @@ mount -t virtiofs shared-folders /tmp<br>
   </p>
   
   <h2>Known limitations</h2>
+  <h3>In-built Camera not supported</h3>
   <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
   </p>
+  <h3>Intel - macOS virtual machines not supported</h3>
+  <p>On mac computers with Intel processor, the app cannot be used to create a macOS virtual machine.</p>
+  <h3>Intel - Save and Restore not supported</h3>
   <p>On mac computers with Intel processor, the app cannot save and restore the state of the virtual machines.</p>
   <p>The app cannot be used on a virtual machine.</p>
-
+  <h3>Apple Silicon - Media & Purchases not supported</h3>
+  <p>On macOS virtual machines, Media & Purchases is not supported. AppStore may not accept sign-in.</p>
+  <h3>Apple Silicon - iCloud support only - macOS 15 and above</h3>
+  <p>iCloud support for virtual machines is available on macOS 15 and later only.</p>
+  <p>
+  Reference: <a href="https://support.apple.com/en-us/120468?cid=mc-ols-icloud-article_120468-ios_ui-06182024">iCloud on virtual machine</a>
+  </p>
   
-  <h2>Known issues</h2>
-  
-  <h3>macOS Tahoe support on macOS Sequoia</h2>
+  <h3>Apple Silicon - macOS Tahoe support on macOS Sequoia</h2>
       <p>
       This <a href="https://developer.apple.com/services-account/download?path=/Developer_Tools/Device_Support_for_macOS_15_beta/MobileDevice_DeviceSupport.dmg">Device Support Image</a> has to be installed beforehand. Otherwise, the following error will be observed:
       </p>
       <p>Installing restore image failed. Error: A software update is required to complete the installation. Installation requires a software update.
       </p>
 
+      <h2>Known issues</h2>
    <h3>Version 1.4.0 and later</h3>
        <p>Force Stop button may show dialog twice.<p>
       
    <h3>User Interface</h3>
-       <p>Keyboard navigation, accessibility, help, table, uniform controls, etc, need some improvements.</p>
-       
+       <p>Keyboard navigation, accessibility, help, table, uniform controls, etc, need some improvements and are in backlog.</p>
+    
+    <h2>Apple notes</h2>
+    <h3>iCloud</h3>
+    <p>
+    Virtualization configures an identity for the VM that it derives from security information in the host’s Secure Enclave. Just as individual physical devices have distinct identities based on their Secure Enclaves, this identity is distinct from other VMs.
+    </p>
+    <p>
+    If someone moves a VM to a different Mac host and restarts it, the Virtualization framework automatically creates a new identity for the VM using the information from the Secure Enclave of the new Mac host. This identity change requires the person using the VM to reauthenticate to allow iCloud to restart syncing data to the VM.
+    </p>
+    <p>
+    Additionally, the Virtualization framework detects attempts to start multiple copies of the same VM simultaneously on the same Mac host. For example, when someone duplicates the files that make up a VM, the framework treats the copy of the VM as a clone of the first one. Starting a second clone while another clone is already running causes the Virtualization framework to automatically construct a new identity for the second clone. This preserves the integrity that different VMs have distinct identities, and requires that the person using the VM reauthenticate to use iCloud services.
+    </p>
+    <p>
+    Please consult <a href="https://support.apple.com/icloud">iCloud support resources</a>
+    </p>
+    <br>
       <h2>Thanks!!</h2>
       <p>
       Thanks to all users of this app.<br>
