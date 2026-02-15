@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About Virtual Machines House</title>
+  <title>Virtual Machines House</title>
 </head>
 <body>
 
-<h1>Virtual Machines House app</h1>
+<h1>Virtual Machines House (VMH) Application</h1>
   <p>Virtual Machines House app is a light weight app designed to create and manage Mac and Linux virtual machines on mac computers.</p>
 
+  <p>Per study, on the AppStore, this is the :</p>
+  <ul>
+  <li>First app to show the list of virtual machines in a table view facilitating sorting on various aspects.</li>
+  <li>First app to show IP address of the virtual machine.(Feature introduced in version 1.5.0).</li>
+  </ul>
+  
   <h2>Mac virtual machines</h2>
   <p>
   At present, mac virtual machines can be created only on the Apple Silicon based mac computers. Only macOS Monterey and above versions based virtual machines can be created.
@@ -94,6 +100,27 @@ mount -t virtiofs shared-folders /tmp<br>
     Observation: It starts with just 4 MB and expands as and when needed.
   </p>
 
+  <h3>NAT - Network Address Translation network mode</h3>
+  <p>
+    A NAT network mode isolates virtual machines. That means, only host can access the virtual machine by using the virtual machine's IP address. Another virtual machine or another host on the LAN cannot access the virtual machine.
+  </p>
+  <p>
+  This is the default mode used at the time of virtual machine creation. This can be changed later at the inspector pane on the main window or the respective virtual machine's window.
+  </p>
+  
+  <h3>Bridge network mode</h3>
+  <p>
+    A Bridge network mode bridges virtual machines. That means, another virtual machine or another host on the LAN can access the virtual machine by its IP address.
+  </p>
+  <p>
+    When the mode is just "Bridge", app chooses the first network interface it 'sees' to bridge with.
+  </p>
+  
+  <h3>Bridge with interface network mode</h3>
+  <p>
+    The difference from the previous is that app uses the given interface to bridge with.
+  </p>
+  
   <h3>Bookmarks</h3>
   <p>
     Following are bookmarked:
@@ -181,6 +208,10 @@ mount -t virtiofs shared-folders /tmp<br>
       <a href="https://www.youtube.com/@VirtualMachinesHouse">Youtube</a>
       
       <h2>Change history</h2>
+      <p>
+      <a href="https://kumbaraasi.github.io/products/virtual-machines-house/history/v-1.5.0.html">
+      Version 1.5.0 - Release notes</a>
+      </p>
       <p>
       <a href="https://kumbaraasi.github.io/products/virtual-machines-house/history/v-1.4.html">
       Version 1.4.0 - Release notes</a>
