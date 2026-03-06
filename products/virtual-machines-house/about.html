@@ -147,6 +147,9 @@ mount -t virtiofs shared-folders /tmp<br>
   </p>
   
   <h2>Known limitations</h2>
+  <h3>ASIF not supported on macOS 26.3</h3>
+  <p>Due to a technical change in macOS 26.3, disk creation gets stuck with Apple Sparse Image Format (ASIF). Please use Raw format when creating a virtual machine or when adding a disk to an existing virtual machine.
+  </p>
   <h3>In-built Camera not supported</h3>
   <p>In-built Camera cannot be accessed. Some Linux virtual machines tend to be inresponsive sometimes when shutting down or when left idle. Some system resources/ports may not be accessible to virtual machines. Performance of the virtual machines can be far less that of the real hardware machines.
   </p>
