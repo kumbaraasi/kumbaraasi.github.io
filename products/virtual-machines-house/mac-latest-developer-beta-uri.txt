@@ -1,1 +1,1 @@
-https://updates.cdn-apple.com/2026WinterFCS/fullrestores/122-08082/B9E8695D-7851-435A-8897-6D84A80F4F84/UniversalMac_26.4_25E243_Restore.ipsw
+https://updates.cdn-apple.com/2026SpringSeed/fullrestores/122-21852/BDB79369-54B9-4326-A5A4-29328983BE3A/UniversalMac_26.5_25F5042g_Restore.ipsw
